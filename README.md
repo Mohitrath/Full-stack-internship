@@ -20,8 +20,14 @@
   <strong>Calendar</strong> •
   <strong>AI Copilot</strong> •
   <strong>Analytics</strong> •
+  <strong>Notifications</strong> •
+  <strong>Profile</strong> •
   <strong>Settings</strong>
 </p>
+
+### 🔗 Quick Links
+
+**[🚀 Live Website](https://devflow-ai-nu.vercel.app/)** &nbsp; • &nbsp; **[💻 GitHub Repository](https://github.com/Mohitrath/Full-stack-internship)**
 
 </div>
 
@@ -30,6 +36,8 @@
 ## 🌐 Live Preview
 
 ### 👉 [Open DevFlow AI](https://devflow-ai-nu.vercel.app/)
+
+### 👉 [View Source on GitHub](https://github.com/Mohitrath/Full-stack-internship)
 
 The current showcase build is optimized for a fast browser-based demo on Vercel, with local persistence so the core workspace remains usable without a separate backend service.
 
@@ -77,8 +85,8 @@ The current showcase build is intentionally lightweight and works directly in th
 | 📅 **Calendar** | Browse scheduled tasks by month and navigate across dates |
 | 🤖 **AI Copilot** | Turn a brief into a practical delivery plan and add generated tasks |
 | 📊 **Analytics** | See live project, task, completion and in-progress metrics |
-| 🔔 **Notifications** | Open the notification center and manage unread state |
-| 👤 **Profile** | Open the profile menu, reach settings, help and sign out |
+| 🔔 **Notifications** | Open the notification center, view unread items and mark them read |
+| 👤 **Profile** | Open the profile menu, access settings, help and sign out |
 | ⚙️ **Settings** | Update profile details and reset demo data |
 | 💾 **Persistence** | Keep demo projects and tasks across browser refreshes |
 | 📱 **Responsive UI** | Desktop and mobile-friendly navigation with a collapsible sidebar |
@@ -247,6 +255,8 @@ The project demonstrates frontend engineering, responsive UI design, client-side
 If you like the design or find the project useful, consider giving the repository a ⭐ on GitHub.
 
 <div align="center">
+
+**[🚀 Open the Live App](https://devflow-ai-nu.vercel.app/)** &nbsp; • &nbsp; **[💻 Explore the Code](https://github.com/Mohitrath/Full-stack-internship)**
 
 **Built with React + Vite + Vercel ⚡**
 
