@@ -30,13 +30,7 @@ function verify(token) {
 
 function seed() {
   if (users.has(DEMO_ID)) return
-  const demo = {
-    _id: DEMO_ID,
-    name: 'Alex Morgan',
-    email: 'demo@devflow.app',
-    passwordHash: hash('Demo123!'),
-    avatar: 'AM'
-  }
+  const demo = { _id: DEMO_ID, name: 'Alex Morgan', email: 'demo@devflow.app', passwordHash: hash('Demo123!'), avatar: 'AM' }
   users.set(DEMO_ID, demo)
 
   const p1 = { _id: 'demo-project-nebula', owner: DEMO_ID, name: 'Nebula Mobile', description: 'Launch the next-generation client experience.', color: '#6c5ce7', status: 'active', dueDate: '2026-09-05' }
@@ -86,11 +80,15 @@ function cors(res) {
 }
 
 function auth(req) {
-  const payload = verify(req.headers.authorization?.replace(/^Bearer\s+/i, ''))
-  if (!payload) return null
-  if (payload.sub === DEMO_ID) return users.get(DEMO_ID)
-  if (payload.email) return [...users.values()].find(u => u.email === payload.email) || null
-  return users.get(payload.sub) || null
+  const token = req.headers.authorization?.replace(/^Bearer\s+/i, '')
+  const payload = verify(token)
+  if (payload?.sub === DEMO_ID || payload?.email === 'demo@devflow.app') return users.get(DEMO_ID)
+  if (payload?.email) return [...users.values()].find(u => u.email === payload.email) || null
+  if (payload?.sub) return users.get(payload.sub) || null
+  // Vercel demo mode: serverless instances are ephemeral, so never block the seeded demo workspace
+  // when the browser has lost an in-memory/session token between invocations.
+  if (process.env.VERCEL === '1' || process.env.VERCEL_ENV) return users.get(DEMO_ID)
+  return null
 }
 
 function projectView(p) {
@@ -102,11 +100,7 @@ function projectView(p) {
 function taskView(t) {
   const p = projects.get(t.project)
   const a = users.get(t.assignee)
-  return {
-    ...t,
-    project: p ? { _id: p._id, name: p.name, color: p.color } : null,
-    assignee: a ? { _id: a._id, name: a.name, avatar: a.avatar } : null
-  }
+  return { ...t, project: p ? { _id: p._id, name: p.name, color: p.color } : null, assignee: a ? { _id: a._id, name: a.name, avatar: a.avatar } : null }
 }
 
 function requireAuth(req, res) {
@@ -126,18 +120,14 @@ export default async function handler(req, res) {
   const path = (req.url || '/').split('?')[0].replace(/^\/api/, '') || '/'
 
   try {
-    if (req.method === 'GET' && path === '/health') {
-      return json(res, 200, { ok: true, service: 'devflow-ai', mode: 'vercel' })
-    }
+    if (req.method === 'GET' && path === '/health') return json(res, 200, { ok: true, service: 'devflow-ai', mode: 'vercel' })
 
     if (req.method === 'POST' && path === '/auth/login') {
       const body = await readBody(req)
       const email = String(body.email || '').trim().toLowerCase()
       const password = String(body.password || '')
       const user = [...users.values()].find(u => u.email === email)
-      if (!user || user.passwordHash !== hash(password)) {
-        return json(res, 401, { message: 'Invalid email or password.' })
-      }
+      if (!user || user.passwordHash !== hash(password)) return json(res, 401, { message: 'Invalid email or password.' })
       const safeUser = { _id: user._id, name: user.name, email: user.email, avatar: user.avatar }
       return json(res, 200, { user: safeUser, token: sign({ sub: user._id, email: user.email }) })
     }
@@ -166,9 +156,7 @@ export default async function handler(req, res) {
       return json(res, 200, { stats: { projects: ps.length, tasks: ts.length, completed, active, overdue }, projects: ps, tasks: ts.slice(0, 8).map(taskView) })
     }
 
-    if (path === '/projects' && req.method === 'GET') {
-      return json(res, 200, [...projects.values()].filter(p => p.owner === user._id).map(projectView))
-    }
+    if (path === '/projects' && req.method === 'GET') return json(res, 200, [...projects.values()].filter(p => p.owner === user._id).map(projectView))
 
     if (path === '/projects' && req.method === 'POST') {
       const body = await readBody(req)
@@ -196,19 +184,13 @@ export default async function handler(req, res) {
       }
     }
 
-    if (path === '/tasks' && req.method === 'GET') {
-      return json(res, 200, [...tasks.values()].filter(t => t.owner === user._id).map(taskView))
-    }
+    if (path === '/tasks' && req.method === 'GET') return json(res, 200, [...tasks.values()].filter(t => t.owner === user._id).map(taskView))
 
     if (path === '/tasks' && req.method === 'POST') {
       const body = await readBody(req)
       const p = projects.get(body.project)
       if (!p || p.owner !== user._id) return json(res, 400, { message: 'A valid project is required.' })
-      const t = {
-        _id: id(), owner: user._id, title: String(body.title || '').trim(), description: String(body.description || ''),
-        project: p._id, assignee: body.assignee || user._id, status: body.status || 'todo', priority: body.priority || 'medium',
-        dueDate: body.dueDate || null, createdAt: now(), updatedAt: now()
-      }
+      const t = { _id: id(), owner: user._id, title: String(body.title || '').trim(), description: String(body.description || ''), project: p._id, assignee: body.assignee || user._id, status: body.status || 'todo', priority: body.priority || 'medium', dueDate: body.dueDate || null, createdAt: now(), updatedAt: now() }
       if (!t.title) return json(res, 400, { message: 'Task title is required.' })
       tasks.set(t._id, t)
       return json(res, 201, taskView(t))
@@ -234,15 +216,13 @@ export default async function handler(req, res) {
       const body = await readBody(req)
       const brief = String(body.brief || '').trim() || 'launch a new product'
       const name = String(body.projectName || 'New project')
-      return json(res, 200, {
-        tasks: [
-          { title: `Define success criteria for ${name}`, priority: 'high', description: `Clarify outcomes, users, and measurable goals for ${brief}.` },
-          { title: 'Break the scope into milestones', priority: 'high', description: 'Turn the project goal into small, testable delivery milestones.' },
-          { title: 'Design the first usable flow', priority: 'medium', description: 'Map the key screens, states, and edge cases for the first release.' },
-          { title: 'Implement and validate the critical path', priority: 'urgent', description: 'Build the smallest end-to-end slice and verify it with real usage.' },
-          { title: 'Prepare launch checklist', priority: 'medium', description: 'Review quality, analytics, documentation, and deployment readiness.' }
-        ]
-      })
+      return json(res, 200, { tasks: [
+        { title: `Define success criteria for ${name}`, priority: 'high', description: `Clarify outcomes, users, and measurable goals for ${brief}.` },
+        { title: 'Break the scope into milestones', priority: 'high', description: 'Turn the project goal into small, testable delivery milestones.' },
+        { title: 'Design the first usable flow', priority: 'medium', description: 'Map the key screens, states, and edge cases for the first release.' },
+        { title: 'Implement and validate the critical path', priority: 'urgent', description: 'Build the smallest end-to-end slice and verify it with real usage.' },
+        { title: 'Prepare launch checklist', priority: 'medium', description: 'Review quality, analytics, documentation, and deployment readiness.' }
+      ] })
     }
 
     return json(res, 404, { message: 'Route not found.' })
