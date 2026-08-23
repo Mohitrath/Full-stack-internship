@@ -23,6 +23,30 @@
 
 ---
 
+## 🖥️ Interface Preview
+
+> A quick visual tour of the DevFlow experience.
+
+### Dashboard
+
+<p align="center">
+  <img src="docs/dashboard.svg" alt="DevFlow dashboard interface" width="100%" />
+</p>
+
+### Project Workspace
+
+<p align="center">
+  <img src="docs/projects.svg" alt="DevFlow projects interface" width="100%" />
+</p>
+
+### Authentication
+
+<p align="center">
+  <img src="docs/login.svg" alt="DevFlow login interface" width="80%" />
+</p>
+
+---
+
 ## ✨ Overview
 
 **DevFlow** is a full-stack project and task management application designed to help teams and individual developers organize projects, track work, monitor progress, and accelerate planning with AI-assisted task generation.
@@ -118,6 +142,7 @@ DevFlow/
 │   └── ...              # Application pages
 ├── scripts/             # Utility / seed scripts
 ├── styles/              # Global and Tailwind styles
+├── docs/                # Interface preview images
 ├── .env.example         # Environment variable template
 ├── jsconfig.json        # JavaScript path configuration
 ├── next.config.js       # Next.js configuration
