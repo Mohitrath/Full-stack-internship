@@ -1,99 +1,64 @@
 # ⚡ DevFlow AI
 
-> **AI-powered developer workspace for managing projects, tasks, sprints, productivity, and development workflows in one place.**
+> **AI-powered developer workspace for planning, managing, and shipping software faster.**
 
-![DevFlow AI](./screenshots/dashboard.png)
+<p align="center">
+  <img src="./screenshots/dashboard.png" alt="DevFlow AI Dashboard" width="100%">
+</p>
+
+<p align="center">
+  <strong>Plan smarter • Track work • Use AI • Ship faster</strong>
+</p>
 
 ---
 
-## ✨ Overview
+## 🖥️ Dashboard Preview
 
-**DevFlow AI** is a modern developer productivity and project management platform designed to help developers organize projects, manage tasks, plan sprints, and use AI assistance to improve their development workflow.
+DevFlow AI provides a centralized workspace where developers can manage projects, tasks, calendars, AI assistance, analytics, and workspace settings.
 
-The platform combines:
+<p align="center">
+  <img src="./screenshots/dashboard.png" alt="DevFlow AI Dashboard Interface" width="95%">
+</p>
 
-* 📁 Project Management
-* ✅ Task Management
-* 🤖 AI Copilot
+### Dashboard Highlights
+
+The current interface includes:
+
+* ⚡ DevFlow AI workspace branding
+* 🔎 Global project/task search
+* 👤 User profile and workspace selector
+* 📁 Project management
+* ✅ Task management
 * 📅 Calendar
+* 🤖 AI Copilot
 * 📊 Analytics
+* ⚙️ Settings
 * 🔔 Notifications
-* ⚙️ Workspace Settings
-
-into one centralized developer workspace.
-
----
-
-## 🖥️ Interface Preview
-
-### 🏠 Dashboard
-
-The main dashboard gives developers a quick overview of their workspace, active projects, tasks, productivity, and items requiring attention.
-
-![DevFlow AI Dashboard](./screenshots/dashboard.png)
-
-### 📁 Projects
-
-Manage all development projects from a centralized project workspace.
-
-![Projects](./screenshots/projects.png)
-
-### ✅ Tasks
-
-Create, organize, prioritize, and track development tasks.
-
-![Tasks](./screenshots/tasks.png)
-
-### 🤖 AI Copilot
-
-Use AI assistance to break down projects, plan sprints, prioritize tasks, and improve productivity.
-
-![AI Copilot](./screenshots/ai-copilot.png)
-
-### 📅 Calendar
-
-Plan tasks, deadlines, meetings, and development sprints.
-
-![Calendar](./screenshots/calendar.png)
-
-### 📊 Analytics
-
-Track project and developer productivity through analytics and performance metrics.
-
-![Analytics](./screenshots/analytics.png)
+* 📈 Workspace progress
+* 🚀 Quick task creation
+* 🧠 AI-powered sprint planning
 
 ---
 
-## 🎨 UI Design
+## ✨ About
 
-DevFlow AI follows a modern SaaS dashboard design with:
+**DevFlow AI** is a modern developer productivity platform designed to bring project management and AI-assisted development planning into one focused workspace.
 
-* Dark navigation sidebar
-* Purple/violet accent colors
-* Clean white content areas
-* Rounded cards
-* Large dashboard statistics
-* Responsive layouts
-* Clear visual hierarchy
-* Developer-focused navigation
-
-The interface is designed around **focus, speed, and simplicity**.
+Instead of switching between multiple productivity tools, developers can manage their development workflow from a single dashboard.
 
 ---
 
-## 🚀 Core Features
+## 🚀 Features
 
 ### 🏠 Workspace Overview
 
-The dashboard provides a centralized view of development activity.
+The dashboard provides a real-time snapshot of development activity.
 
-* Personalized greeting
-* Workspace activity summary
 * Active projects
 * Completed tasks
 * Tasks in progress
 * Items requiring attention
-* Overall workspace progress
+* Overall workspace completion
 * Quick task creation
 * AI sprint planning
 
@@ -101,122 +66,81 @@ The dashboard provides a centralized view of development activity.
 
 ### 📁 Project Management
 
-Manage multiple development projects from one workspace.
+Manage development projects from a centralized workspace.
 
 * Create projects
 * Track project progress
-* Organize project tasks
+* Organize tasks by project
 * Monitor project status
 * View project activity
-* Manage project timelines
+* Track milestones
 
 ---
 
 ### ✅ Task Management
 
-A complete task management system for development workflows.
+Organize development work with a dedicated task system.
 
 * Create tasks
-* Assign priorities
-* Track status
+* Set priorities
+* Track task status
 * Mark tasks complete
+* Monitor deadlines
+* Identify urgent work
 * Organize tasks by project
-* Track deadlines
-* Identify urgent tasks
-* Monitor progress
-
-Example workflow:
-
-```text
-Backlog
-   ↓
-To Do
-   ↓
-In Progress
-   ↓
-Review
-   ↓
-Completed
-```
 
 ---
 
 ### 🤖 AI Copilot
 
-DevFlow AI provides an intelligent assistant for development planning.
+The AI Copilot is designed to assist developers with planning and productivity.
 
-Possible AI capabilities include:
-
-* Generate project plans
-* Break projects into tasks
-* Generate sprint plans
-* Prioritize tasks
-* Suggest development workflows
-* Analyze project progress
-* Provide productivity recommendations
-
-Example:
+Potential workflows include:
 
 ```text
 Project Idea
      ↓
 AI Analysis
      ↓
-Project Breakdown
+Task Breakdown
      ↓
-Task Generation
+Prioritization
      ↓
 Sprint Planning
      ↓
 Development
 ```
 
+AI capabilities can include:
+
+* Project planning
+* Task generation
+* Sprint planning
+* Task prioritization
+* Development recommendations
+* Progress analysis
+
 ---
 
 ### 📅 Calendar
 
-Manage development schedules from an integrated calendar.
+Plan development activities and deadlines.
 
 * Task deadlines
 * Sprint schedules
-* Meetings
 * Project milestones
+* Meetings
 * Upcoming activities
 
 ---
 
 ### 📊 Analytics
 
-Monitor development productivity using workspace analytics.
+Track development productivity through workspace analytics.
 
-Track:
+Example metrics:
 
-* Tasks completed
-* Tasks in progress
-* Project activity
-* Completion rate
-* Productivity trends
-* Workspace performance
-
----
-
-### 🔔 Notifications
-
-Stay informed about important activities.
-
-* Task reminders
-* Project updates
-* Deadlines
-* Urgent tasks
-* Workspace activity
-
----
-
-## 📊 Dashboard Statistics
-
-The dashboard provides a quick productivity snapshot.
-
-| Metric           | Example |
+| Metric           | Current |
 | ---------------- | ------: |
 | Active Projects  |       3 |
 | Tasks Completed  |       7 |
@@ -226,37 +150,36 @@ The dashboard provides a quick productivity snapshot.
 
 ---
 
-## 🧠 AI-Powered Development Workflow
+### 🔔 Notifications
 
-```text
-              ┌──────────────┐
-              │ Project Idea │
-              └──────┬───────┘
-                     ↓
-              ┌──────────────┐
-              │ AI Planning  │
-              └──────┬───────┘
-                     ↓
-              ┌──────────────┐
-              │ Task Creation│
-              └──────┬───────┘
-                     ↓
-              ┌──────────────┐
-              │ Sprint Plan  │
-              └──────┬───────┘
-                     ↓
-              ┌──────────────┐
-              │ Development  │
-              └──────┬───────┘
-                     ↓
-              ┌──────────────┐
-              │  Analytics   │
-              └──────────────┘
-```
+Keep track of important workspace events.
+
+* Task reminders
+* Project updates
+* Important deadlines
+* Urgent items
+* Workspace activity
 
 ---
 
-## 🧭 Navigation
+## 🎨 User Interface
+
+The DevFlow AI dashboard uses a modern SaaS design system featuring:
+
+* Dark navigation sidebar
+* Purple/violet brand accents
+* Clean dashboard cards
+* Rounded UI components
+* Large productivity metrics
+* Responsive layouts
+* Developer-focused navigation
+* Minimal visual clutter
+
+The supplied dashboard screenshot represents the current interface.
+
+---
+
+## 🧭 Application Navigation
 
 ```text
 WORKSPACE
@@ -275,12 +198,42 @@ TOOLS
 
 ---
 
+## 🧠 Development Workflow
+
+```text
+                ┌──────────────┐
+                │ Project Idea │
+                └──────┬───────┘
+                       ↓
+                ┌──────────────┐
+                │ AI Planning  │
+                └──────┬───────┘
+                       ↓
+                ┌──────────────┐
+                │ Task Creation│
+                └──────┬───────┘
+                       ↓
+                ┌──────────────┐
+                │ Sprint Plan  │
+                └──────┬───────┘
+                       ↓
+                ┌──────────────┐
+                │ Development  │
+                └──────┬───────┘
+                       ↓
+                ┌──────────────┐
+                │  Analytics   │
+                └──────────────┘
+```
+
+---
+
 ## 🛠️ Tech Stack
 
 ### Frontend
 
-* React
 * Next.js
+* React
 * TypeScript
 * Tailwind CSS
 * Responsive UI
@@ -288,14 +241,14 @@ TOOLS
 
 ### Backend
 
-* Next.js API Routes / Server Actions
+* Next.js API routes / Server Actions
 * REST APIs
 * Authentication
 * Server-side processing
 
 ### Database
 
-Compatible with:
+Designed to work with:
 
 * PostgreSQL
 * Supabase
@@ -303,16 +256,14 @@ Compatible with:
 
 ### AI
 
-AI functionality can be implemented using:
+AI functionality can be integrated using:
 
 * OpenAI API
 * AI SDK
-* LLM-powered task planning
+* LLM-based task planning
 * Structured AI responses
 
 ### Deployment
-
-Recommended:
 
 * Vercel
 * GitHub
@@ -348,18 +299,14 @@ devflow-ai/
 │
 ├── lib/
 │   ├── ai/
-│   ├── db/
 │   ├── auth/
+│   ├── db/
 │   └── utils/
 │
 ├── public/
-│   └── screenshots/
-│       ├── dashboard.png
-│       ├── projects.png
-│       ├── tasks.png
-│       ├── ai-copilot.png
-│       ├── calendar.png
-│       └── analytics.png
+│
+├── screenshots/
+│   └── dashboard.png
 │
 ├── hooks/
 ├── types/
@@ -376,20 +323,20 @@ devflow-ai/
 
 ## 🚀 Getting Started
 
-### 1. Clone the repository
+### Clone
 
 ```bash
 git clone https://github.com/your-username/devflow-ai.git
 cd devflow-ai
 ```
 
-### 2. Install dependencies
+### Install dependencies
 
 ```bash
 npm install
 ```
 
-### 3. Configure environment variables
+### Configure environment variables
 
 Create `.env.local`:
 
@@ -403,7 +350,7 @@ OPENAI_API_KEY=your_openai_api_key
 NEXTAUTH_SECRET=your_auth_secret
 ```
 
-### 4. Start development server
+### Run locally
 
 ```bash
 npm run dev
@@ -417,19 +364,12 @@ http://localhost:3000
 
 ---
 
-## 🧪 Available Scripts
+## 🧪 Scripts
 
 ```bash
-# Development
 npm run dev
-
-# Production build
 npm run build
-
-# Start production server
 npm start
-
-# Lint
 npm run lint
 ```
 
@@ -440,31 +380,29 @@ npm run lint
 DevFlow AI is designed for:
 
 * 💻 Desktop
-* 🖥️ Large screens
+* 🖥️ Large displays
 * 📱 Tablets
 * 📲 Mobile devices
-
-The interface adapts to different screen sizes while maintaining easy navigation and readable dashboard components.
 
 ---
 
 ## 🔐 Security
 
-Recommended security practices:
+Recommended security practices include:
 
-* Secure authentication
 * Protected routes
+* Secure authentication
 * Server-side API keys
 * Environment variable protection
 * Input validation
 * Database access controls
 * Role-based permissions
 
-> Never expose private API keys in client-side code.
+> Never expose private API keys in frontend code.
 
 ---
 
-## 🔮 Future Roadmap
+## 🔮 Roadmap
 
 * [ ] AI-generated project plans
 * [ ] AI task prioritization
@@ -472,7 +410,7 @@ Recommended security practices:
 * [ ] GitHub integration
 * [ ] GitHub issue synchronization
 * [ ] Pull request tracking
-* [ ] Commit activity dashboard
+* [ ] Commit activity
 * [ ] Team collaboration
 * [ ] Real-time notifications
 * [ ] Advanced analytics
@@ -480,32 +418,26 @@ Recommended security practices:
 * [ ] Google Calendar integration
 * [ ] Slack/Discord integration
 * [ ] Custom AI agents
-* [ ] Workspace roles and permissions
+* [ ] Workspace roles
 * [ ] Mobile application
 
 ---
 
-## 📸 Screenshot Gallery
+## 📸 Screenshots
 
-> Place the screenshots inside the `screenshots/` directory.
+### Dashboard
 
-| Dashboard                                 | Projects                                |
-| ----------------------------------------- | --------------------------------------- |
-| ![Dashboard](./screenshots/dashboard.png) | ![Projects](./screenshots/projects.png) |
+<p align="center">
+  <img src="./screenshots/dashboard.png" alt="DevFlow AI Dashboard" width="100%">
+</p>
 
-| Tasks                             | AI Copilot                                  |
-| --------------------------------- | ------------------------------------------- |
-| ![Tasks](./screenshots/tasks.png) | ![AI Copilot](./screenshots/ai-copilot.png) |
-
-| Calendar                                | Analytics                                 |
-| --------------------------------------- | ----------------------------------------- |
-| ![Calendar](./screenshots/calendar.png) | ![Analytics](./screenshots/analytics.png) |
+> **Note:** Only the dashboard screenshot currently provided for this project is included here. Additional screens should be added only when their actual screenshots are available, rather than using placeholder or fabricated images.
 
 ---
 
 ## 🎯 Product Vision
 
-DevFlow AI brings the complete development workflow into a single workspace:
+DevFlow AI brings the developer workflow together:
 
 ```text
 Projects
@@ -523,7 +455,9 @@ Analytics
 Developer Productivity
 ```
 
-The goal is to help developers spend less time managing work and more time **building and shipping software**.
+The goal is simple:
+
+> **Build faster. Plan smarter. Ship better.**
 
 ---
 
@@ -543,6 +477,6 @@ If you find **DevFlow AI** useful, consider giving the repository a ⭐ on GitHu
 
 <p align="center">
   ⚡ <strong>DevFlow AI</strong>
-  <br/>
+  <br>
   Build faster. Plan smarter. Ship better.
 </p>
