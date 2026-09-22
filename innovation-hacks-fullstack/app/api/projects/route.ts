@@ -1,0 +1,4 @@
+import {NextRequest} from 'next/server';import {z} from 'zod';import {prisma} from '@/lib/prisma';import {getCurrentUser} from '@/lib/auth';import {ok,err} from '@/lib/api';
+const schema=z.object({name:z.string().min(1).max(100),description:z.string().max(1000).optional(),color:z.string().optional()});
+export async function GET(){const u=await getCurrentUser();if(!u)return err('Unauthorized',401);const projects=await prisma.project.findMany({where:{ownerId:u.id},include:{tasks:true},orderBy:{updatedAt:'desc'}});return ok({projects})}
+export async function POST(req:NextRequest){const u=await getCurrentUser();if(!u)return err('Unauthorized',401);try{const b=schema.parse(await req.json());const p=await prisma.project.create({data:{...b,ownerId:u.id}});return ok({project:p},201)}catch(e:any){return err(e?.issues?.[0]?.message||'Invalid data')}}

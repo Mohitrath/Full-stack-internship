@@ -1,0 +1,1 @@
+import {redirect} from 'next/navigation';import {getCurrentUser} from '@/lib/auth';import ProjectPage from '@/components/ProjectPage';export default async function Page({params}:{params:Promise<{id:string}>}){const u=await getCurrentUser();if(!u)redirect('/login');const {id}=await params;return <ProjectPage id={id}/>}

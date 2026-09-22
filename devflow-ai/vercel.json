@@ -1,9 +1,0 @@
-{
-  "installCommand": "npm run install:all",
-  "buildCommand": "npm run build --prefix client",
-  "outputDirectory": "client/dist",
-  "framework": "vite",
-  "rewrites": [
-    { "source": "/(.*)", "destination": "/index.html" }
-  ]
-}
